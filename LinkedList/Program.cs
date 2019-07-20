@@ -37,17 +37,36 @@ namespace LinkedList
 
         public void addFirst(T val)
         {
-            throw new NotImplementedException();
+            if (head == null)
+            {
+                head = new MyNode<T>(val);
+            } else
+            {
+                MyNode<T> newHead = new MyNode<T>(val);
+                newHead.next = head;
+                head = newHead;
+            }
         }
 
         public void addLast(T val)
         {
-            throw new NotImplementedException();
+            if (head == null)
+            {
+                head = new MyNode<T>(val);
+            } else
+            {
+                MyNode<T> currentNode = head;
+                while (currentNode.next != null)
+                {
+                    currentNode = currentNode.next;
+                }
+                currentNode.next = new MyNode<T>(val);
+            }
         }
 
         public void clear()
         {
-            throw new NotImplementedException();
+            head = null;
         }
 
         public T getFirst()
@@ -57,7 +76,18 @@ namespace LinkedList
 
         public T getLast()
         {
-            throw new NotImplementedException();
+            if (size() == 0)
+            {
+                throw new Exception("list is empty");
+            } else
+            {
+                MyNode<T> currentNode = head;
+                while (currentNode.next != null)
+                {
+                    currentNode = currentNode.next;
+                }
+                return currentNode;
+            }
         }
 
         public void remove(T val)
@@ -77,7 +107,13 @@ namespace LinkedList
 
         public int size()
         {
-            throw new NotImplementedException();
+            if (head == null)
+            {
+                return 0;
+            } else
+            {
+                return 1;
+            }
         }
     }
 
