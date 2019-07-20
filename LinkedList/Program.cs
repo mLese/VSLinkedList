@@ -20,12 +20,12 @@ namespace LinkedList
         void clear();
     }
 
-    class MyNode<T>
+    public class MyNode<T>
     {
         T value;
         MyNode<T> next;
 
-        MyNode(T value) {
+        public MyNode(T value) {
             this.value = value;
             next = null;
         }
@@ -33,6 +33,8 @@ namespace LinkedList
 
     public class MyLinkedList<T> : ILinkedList<T>
     {
+        MyNode<T> head = null;
+
         public void addFirst(T val)
         {
             throw new NotImplementedException();
