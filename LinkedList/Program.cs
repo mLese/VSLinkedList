@@ -11,8 +11,8 @@ namespace LinkedList
     {
         T getFirst();
         T getLast();
-        T removeFirst();
-        T removeLast();
+        void removeFirst();
+        void removeLast();
         void addFirst(T val);
         void addLast(T val);
         void remove(T val);
@@ -37,36 +37,17 @@ namespace LinkedList
 
         public void addFirst(T val)
         {
-            if (head == null)
-            {
-                head = new MyNode<T>(val);
-            } else
-            {
-                MyNode<T> newHead = new MyNode<T>(val);
-                newHead.next = head;
-                head = newHead;
-            }
+            throw new NotImplementedException();
         }
 
         public void addLast(T val)
         {
-            if (head == null)
-            {
-                head = new MyNode<T>(val);
-            } else
-            {
-                MyNode<T> currentNode = head;
-                while (currentNode.next != null)
-                {
-                    currentNode = currentNode.next;
-                }
-                currentNode.next = new MyNode<T>(val);
-            }
+            throw new NotImplementedException();
         }
 
         public void clear()
         {
-            head = null;
+            throw new NotImplementedException();
         }
 
         public T getFirst()
@@ -76,18 +57,7 @@ namespace LinkedList
 
         public T getLast()
         {
-            if (size() == 0)
-            {
-                throw new Exception("list is empty");
-            } else
-            {
-                MyNode<T> currentNode = head;
-                while (currentNode.next != null)
-                {
-                    currentNode = currentNode.next;
-                }
-                return currentNode;
-            }
+            throw new NotImplementedException();
         }
 
         public void remove(T val)
@@ -95,25 +65,19 @@ namespace LinkedList
             throw new NotImplementedException();
         }
 
-        public T removeFirst()
+        public void removeFirst()
         {
             throw new NotImplementedException();
         }
 
-        public T removeLast()
+        public void removeLast()
         {
             throw new NotImplementedException();
         }
 
         public int size()
         {
-            if (head == null)
-            {
-                return 0;
-            } else
-            {
-                return 1;
-            }
+            throw new NotImplementedException();
         }
     }
 

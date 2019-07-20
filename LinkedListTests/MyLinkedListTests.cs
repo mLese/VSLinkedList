@@ -47,9 +47,9 @@ namespace LinkedList.Tests
         [TestMethod()]
         public void removeTest()
         {
-            list.addFirst("string1");
-            list.addFirst("string2");
             list.addFirst("string3");
+            list.addFirst("string2");
+            list.addFirst("string1");
             list.remove("string2");
             Assert.AreEqual("string1", list.getFirst());
             Assert.AreEqual("string3", list.getLast());
