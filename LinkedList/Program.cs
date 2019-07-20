@@ -22,8 +22,8 @@ namespace LinkedList
 
     public class MyNode<T>
     {
-        T value;
-        MyNode<T> next;
+        public T value;
+        public MyNode<T> next;
 
         public MyNode(T value) {
             this.value = value;
