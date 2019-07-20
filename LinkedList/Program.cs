@@ -37,47 +37,136 @@ namespace LinkedList
 
         public void addFirst(T val)
         {
-            throw new NotImplementedException();
+            if (head == null)
+            {
+                head = new MyNode<T>(val);
+            }
+            else
+            {
+                MyNode<T> newHead = new MyNode<T>(val);
+                newHead.next = head;
+                head = newHead;
+            }
         }
 
         public void addLast(T val)
         {
-            throw new NotImplementedException();
+            if (head == null)
+            {
+                head = new MyNode<T>(val);
+            }
+            else
+            {
+                MyNode<T> last = getLastNode();
+                last.next = new MyNode<T>(val);
+            }
         }
 
         public void clear()
         {
-            throw new NotImplementedException();
+            head = null;
         }
 
         public T getFirst()
         {
-            throw new NotImplementedException();
+            return head.value;
         }
 
         public T getLast()
         {
-            throw new NotImplementedException();
+            if (size() == 0)
+            {
+                throw new Exception("list is empty");
+            }
+            else
+            {
+                MyNode<T> lastNode = getLastNode();
+                return lastNode.value;
+            }
         }
 
         public void remove(T val)
         {
-            throw new NotImplementedException();
+            MyNode<T> currentNode = head;
+            MyNode<T> prevNode = currentNode;
+
+            if (size() == 0)
+            {
+                throw new Exception("list is empty");
+            }
+            else
+            {
+                while (!currentNode.value.Equals(val) && currentNode.next != null)
+                {
+                    prevNode = currentNode;
+                    currentNode = currentNode.next;
+                }
+
+                if (currentNode.value.Equals(val))
+                {
+                    if (currentNode.next == null) // end of list
+                    {
+                        prevNode.next = null;
+                    }
+                    else
+                    {
+                        prevNode.next = currentNode.next; // skip over found node
+                    }
+                }
+            }
         }
 
         public void removeFirst()
         {
-            throw new NotImplementedException();
+            head = head.next;
         }
 
         public void removeLast()
         {
-            throw new NotImplementedException();
+            MyNode<T> currentNode = head;
+            MyNode<T> prevNode = currentNode;
+
+            if (size() == 0)
+            {
+                throw new Exception("list is empty");
+            }
+            else
+            {
+                while (currentNode.next != null)
+                {
+                    prevNode = currentNode;
+                    currentNode = currentNode.next;
+                }
+            }
+            prevNode.next = null;
         }
 
         public int size()
         {
-            throw new NotImplementedException();
+            if (head == null)
+            {
+                return 0;
+            }
+            else
+            {
+                int i = 1;
+                MyNode<T> currentNode = head;
+                while (currentNode.next != null)
+                {
+                    currentNode = currentNode.next;
+                    i++;
+                }
+                return i;
+            }
+        }
+        private MyNode<T> getLastNode()
+        {
+            MyNode<T> currentNode = head;
+            while (currentNode.next != null)
+            {
+                currentNode = currentNode.next;
+            }
+            return currentNode;
         }
     }
 
